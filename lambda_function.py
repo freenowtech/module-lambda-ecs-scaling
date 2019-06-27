@@ -38,7 +38,10 @@ def handler(event, context):
                     'AttributeType': 'S'
                 }
             ],
-            BillingMode='PAY_PER_REQUEST',
+            ProvisionedThroughput={
+                'ReadCapacityUnits': 2,
+                'WriteCapacityUnits': 2,
+            }
         )
         waiter = dynamodb.get_waiter('table_exists')
         waiter.wait(
