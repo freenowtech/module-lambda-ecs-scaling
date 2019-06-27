@@ -4,10 +4,10 @@ variable "ecs_cluster" {
 
 variable "ecs_scheduled_downscaling_expression" {
   description = "The scheduling expression for the CloudWatch rule that triggers scheduled ECS Service downscaling (GMT)"
-  default     = "cron(00 21 * * ? *)"
+  default     = "cron(00 21 ? * MON-FRI *)"
 }
 
 variable "ecs_scheduled_upscaling_expression" {
   description = "The scheduling expression for the CloudWatch rule that triggers scheduled ECS Service upscalin (GMT)"
-  default     = "cron(00 5 * * ? *)"
+  default     = "cron(00 5 ? * MON-FRI *)"
 }

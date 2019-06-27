@@ -13,6 +13,7 @@ Before scaling down, a dynamodb table will be updated with the desired count of 
 ```
 module "module-lambda-ecs-scaling" {
   source = "github.com/mytaxi/module-lambda-ecs-scaling"
+  ecs_cluster = "default"
 }
 ```
 
@@ -21,8 +22,9 @@ module "module-lambda-ecs-scaling" {
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | ecs\_cluster | The name of the ECS Cluster to scale | string | n/a | yes |
-| ecs\_scheduled\_downscaling\_expression | The scheduling expression for the CloudWatch rule that triggers scheduled ECS Service downscaling (GMT) | string | `"cron(00 21 * * ? *)"` | no |
-| ecs\_scheduled\_upscaling\_expression | The scheduling expression for the CloudWatch rule that triggers scheduled ECS Service upscalin (GMT) | string | `"cron(00 5 * * ? *)"` | no |
+| ecs\_scheduled\_downscaling\_expression | The scheduling expression for the CloudWatch rule that triggers scheduled ECS Service downscaling (GMT) | string | `"cron(00 21 ? * MON-FRI *)"` | no |
+| ecs\_scheduled\_upscaling\_expression | The scheduling expression for the CloudWatch rule that triggers scheduled ECS Service upscalin (GMT) | string | `"cron(00 5 ? * MON-FRI *)"` | no |
+
 
 ## Contributing
 
