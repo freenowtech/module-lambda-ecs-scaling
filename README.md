@@ -12,7 +12,7 @@ Before scaling down, a dynamodb table will be updated with the desired count of 
 
 ```
 module "module-lambda-ecs-scaling" {
-  source = "github.com/mytaxi/module-lambda-ecs-scaling"
+  source = "github.com/freenowtech/module-lambda-ecs-scaling"
   ecs_cluster = "default"
 }
 ```
